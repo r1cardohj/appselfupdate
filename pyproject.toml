@@ -1,0 +1,48 @@
+[project]
+name = "appselfupdate"
+dynamic = ["version"]
+description = "Self-update for single-file apps: check a manifest, download, swap by rename, restart."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "r1cardohj" },
+]
+keywords = ["self-update", "updater", "pyinstaller", "desktop", "qt"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+qt = ["PySide6>=6.6"]
+
+[project.urls]
+Homepage = "https://github.com/r1cardohj/appselfupdate"
+Repository = "https://github.com/r1cardohj/appselfupdate"
+Issues = "https://github.com/r1cardohj/appselfupdate/issues"
+Changelog = "https://github.com/r1cardohj/appselfupdate/blob/main/CHANGELOG.md"
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/appselfupdate/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/appselfupdate"]
